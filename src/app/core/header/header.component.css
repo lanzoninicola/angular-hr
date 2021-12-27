@@ -1,0 +1,5 @@
+header {
+  background-color: var(--tui-base-02);
+  height: 75px;
+  z-index: 100;
+}

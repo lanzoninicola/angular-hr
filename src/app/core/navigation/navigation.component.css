@@ -1,0 +1,9 @@
+.nav-item {
+  cursor: pointer;
+
+  color: var(--tui-text-01);
+}
+
+.nav-item:hover {
+  color: var(--tui-text-02);
+}
