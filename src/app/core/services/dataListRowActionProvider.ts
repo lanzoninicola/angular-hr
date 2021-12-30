@@ -16,7 +16,7 @@ import { DefaultDataListRowActionsService } from './default-data-list-row-action
   providedIn: 'root',
 })
 export abstract class DataListRowActionProvider implements OnDestroy {
-  actionsStore: Subject<any> = new Subject();
+  actionsStore$: Subject<any> = new Subject();
   readonly actionList: DataListRowAction[] = [];
 
   getActions(): DataListRowAction[] {
@@ -30,6 +30,6 @@ export abstract class DataListRowActionProvider implements OnDestroy {
   abstract subscribe(): void;
 
   ngOnDestroy() {
-    this.actionsStore.unsubscribe();
+    this.actionsStore$.unsubscribe();
   }
 }

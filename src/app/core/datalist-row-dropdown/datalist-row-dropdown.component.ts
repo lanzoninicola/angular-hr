@@ -41,6 +41,6 @@ export class DatalistRowDropdownComponent implements OnInit {
 
   handleAction(actionPayload: DataListRowActionPayload): void {
     this.dropdownOpen = false;
-    this.actionProvider.actionsStore.next(actionPayload);
+    this.actionProvider.actionsStore$.next(actionPayload);
   }
 }

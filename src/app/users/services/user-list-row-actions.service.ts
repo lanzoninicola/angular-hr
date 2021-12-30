@@ -29,7 +29,7 @@ export class UserListRowActionsService extends DataListRowActionProvider {
   }
 
   subscribe() {
-    this.actionsStore.subscribe((a: DataListRowActionPayload) => {
+    this.actionsStore$.subscribe((a: DataListRowActionPayload) => {
       if (a.action === 'edit') {
         this.edit(a.payload);
       }
