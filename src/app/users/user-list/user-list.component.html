@@ -1,1 +1,40 @@
-<p>user-list works!</p>
+<div class="user-list-container">
+  <router-outlet></router-outlet>
+  <div class="user-list-header">
+    <div class="user-list-header-title">
+      <h3 class="tui-text_h3">Users</h3>
+    </div>
+    <div class="user-list-header-actions">
+      <button
+        class="tui-button tui-button_primary tui-button_small"
+        (click)="addUser()"
+      >
+        Add User
+      </button>
+    </div>
+  </div>
+  <div class="user-list-content">
+    <table class="tui-table">
+      <tbody>
+        <tr class="tui-table__tr">
+          <th class="tui-table__th row-actions">Actions</th>
+          <th class="tui-table__th hidden">Id</th>
+          <th class="tui-table__th">Firstname</th>
+          <th class="tui-table__th">Lastname</th>
+          <th class="tui-table__th">Company Role</th>
+        </tr>
+        <tr class="tui-table__tr" *ngFor="let user of users">
+          <td class="tui-table__td">
+            <app-datalist-row-dropdown
+              [payload]="user"
+            ></app-datalist-row-dropdown>
+          </td>
+          <td class="tui-table__td hidden">{{ user.id }}</td>
+          <td class="tui-table__td">{{ user.firstname }}</td>
+          <td class="tui-table__td">{{ user.lastname }}</td>
+          <td class="tui-table__td">{{ user.companyRole }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
