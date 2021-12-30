@@ -6,17 +6,15 @@ import {
   TuiRootModule,
   TuiDialogModule,
   TuiNotificationsModule,
-  TUI_SANITIZER,
 } from '@taiga-ui/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
-import { TuiDocMainModule } from '@taiga-ui/addon-doc';
 import { TuiInputModule } from '@taiga-ui/kit';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { loadProviders } from './app.providers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,10 +28,9 @@ import { CoreModule } from './core/core.module';
     TuiRootModule,
     TuiDialogModule,
     TuiNotificationsModule,
-    TuiDocMainModule,
     TuiInputModule,
   ],
-  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+  providers: loadProviders(),
   bootstrap: [AppComponent],
 })
 export class AppModule {}

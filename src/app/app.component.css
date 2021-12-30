@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.main .col1 {
+  min-width: 200px;
+  width: 15%;
+}
+
+.main .col2 {
+  width: 80%;
+}
