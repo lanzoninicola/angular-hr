@@ -1,11 +1,10 @@
 .sidebar {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
   overflow-x: hidden;
-  padding-top: 75px;
   z-index: -1;
   border-right: 1px solid var(--tui-base-03);
 }
